@@ -6,7 +6,7 @@
 /*   By: nsaiki <nsaiki@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 01:00:48 by nsaiki            #+#    #+#             */
-/*   Updated: 2026/04/30 01:59:47 by nsaiki           ###   ########.fr       */
+/*   Updated: 2026/04/30 23:38:09 by nsaiki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,10 @@ void *ft_memmove(void *dest, const void *src, size_t n)
     }
     else
     {
-        i = n;
         while(n>0)
         {
-            d[i] = s[i]
-            i--;
+            d[n] = s[n]
+            n--;
         }
     }
     return(dest);
