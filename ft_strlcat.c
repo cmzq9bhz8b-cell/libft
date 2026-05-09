@@ -5,39 +5,40 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsaiki <nsaiki@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/03 01:01:24 by nsaiki            #+#    #+#             */
-/*   Updated: 2026/05/03 14:05:22 by nsaiki           ###   ########.fr       */
+/*   Created: 2026/05/03 01:23:50 by nsaiki            #+#    #+#             */
+/*   Updated: 2026/05/10 01:09:40 by nsaiki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 size_t ft_strlen(const char *s);
-size_t ft_strlcat(char * restrict dst, const char * restrict src, size_t dstsize)
-  {
-    size_t i;
+ size_t ft_strlcat(char *dst, const char *src, size_t size)
+{
     size_t dst_len;
     size_t src_len;
-    
-    i = 0;
+    size_t i;
     dst_len = ft_strlen(dst);
     src_len = ft_strlen(src);
-    if(dst_len>=dstsize)
-        return(dstsize + src_len);
-    while(src[i] && (dst_len + i)<dstsize-1)
+    i = 0;
+    if(size <= dst_len)
+        return(size + src_len);
+    while(src[i] && (dst_len+i)<size-1)
     {
         dst[dst_len + i] = src[i];
         i++;
     }
-    dst[dst_len + i]= '\0';
+    dst[dst_len + i] = '\0';
     return(dst_len + src_len);
-  }
-  #include <stdio.h>
-  int main(void)
-  {
+}
+#include<stdio.h>
+int main(void)
+{
     char dst[10] = "hello";
+    char src[] = "world";
     size_t ret;
-    ret = ft_strlcat(dst,"world",10);
+    ret = ft_strlcat(dst,src,10);
     printf("%s",dst);
     printf("%zu",ret);
     return (0);
-  } 
+
+}

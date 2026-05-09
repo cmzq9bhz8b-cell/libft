@@ -5,39 +5,40 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsaiki <nsaiki@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/30 23:39:03 by nsaiki            #+#    #+#             */
-/*   Updated: 2026/05/03 00:59:11 by nsaiki           ###   ########.fr       */
+/*   Created: 2026/04/30 23:04:47 by nsaiki            #+#    #+#             */
+/*   Updated: 2026/05/10 01:09:50 by nsaiki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-size_t ft_strlcpy(char * restrict dst, const char * restrict src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-    size_t i;
-    size_t p;
-    p = 0;
-    while(src[p])
-        p++;
-    if(dstsize == 0)
-        return(p);
+	size_t	i;
+	size_t	k;
+
+	k = 0;
     i = 0;
-    while(src[i] && i < dstsize - 1)
-    {
-        dst[i] = src[i];
-        i++;
-    }
-    dst[i] = '\0';
-    return (p);
+	while (src[k])
+		k++;
+	if (size == 0)
+		return (k);
+	while (src[i] && i < size - 1)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (k);
 }
 
-#include<stdio.h>
-int main(void)
+#include <stdio.h>
+
+int	main(void)
 {
-    char src[] = "hello";
-    char dst[5];
-    size_t ret;
-    ret = ft_strlcpy(dst, src, sizeof(dst));
-    printf("%s",src);
+	char dst[5];
+    size_t a;
+	a = ft_strlcpy(dst, "hello", 5);
     printf("%s",dst);
-    return(0);
+    printf("%zu",a);
+	return (0);
 }
