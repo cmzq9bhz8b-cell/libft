@@ -13,7 +13,7 @@ SRCS = ft_isalpha.c \
 	ft_isprint.c \
 	ft_strlen.c \
 	ft_memset.c \
-	ft_\ bzero.c \
+	ft_bzero.c \
 	ft_memcpy.c \
 	ft_memmove.c \
 	ft_memchr.c \
@@ -26,7 +26,11 @@ SRCS = ft_isalpha.c \
 	ft_strlcpy.c \
 	ft_strlcat.c \
 	ft_strnstr.c \
-	ft_\ atoi.c
+	ft_atoi.c \
+	ft_substr.c \
+	ft_strtrim.c \
+	ft_split.c \
+	ft_itoa.c
 
 OBJS = $(SRCS:.c=.o)
 
